@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 
+
 describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
@@ -13,7 +14,7 @@ describe('AppComponent', () => {
                 FormsModule,
                 HttpClientTestingModule,
                 TableModule,
-                DialogModule
+                DialogModule,
             ],
             declarations: [
                 AppComponent

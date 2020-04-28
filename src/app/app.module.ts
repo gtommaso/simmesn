@@ -7,12 +7,16 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
+import {MultiSelect} from './select/multiselect.component';
+import {MultiSelectModule} from 'primeng/multiselect';
+ 
 
 import { AppComponent } from './app.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        MultiSelect
     ],
     imports: [
         BrowserModule,
@@ -22,7 +26,10 @@ import { AppComponent } from './app.component';
         HttpClientModule,
         InputTextModule,
         DialogModule,
-        ButtonModule
+        ButtonModule,
+        MultiSelectModule,
+        
+    
     ],
     providers: [],
     bootstrap: [AppComponent]

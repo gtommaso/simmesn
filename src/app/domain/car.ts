@@ -6,3 +6,5 @@ export interface Car {
     price?;
     saleDate?;
 }
+
+
