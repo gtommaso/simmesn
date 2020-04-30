@@ -5,12 +5,14 @@ import { Operatore } from '../domain/operatore';
 @Injectable()
 export class OperatoriService {
 
-    constructor(private http: HttpClient) {}
+    REST_API_SERVER: string = "http://localhost:3200/operatori";
+
+
+    constructor(private httpClient: HttpClient) {}
 
     getAllOperatori() {
-        return this.http.get<any>('assets/data/cars-small.json')
-            .toPromise()
-            .then(res => <Operatore[]> res.data)
-            .then(data => data);
+       
+                return this.httpClient.get(this.REST_API_SERVER);       
+
     }
 }

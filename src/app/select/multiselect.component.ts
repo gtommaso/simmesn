@@ -6,6 +6,7 @@ import { Operatore } from '../domain/operatore';
 
 
 @Component({
+    providers: [OperatoriService],
     selector: 'MultiSelect',
     templateUrl: './multiselect.component.html',
     styles: [`
@@ -32,9 +33,9 @@ import { Operatore } from '../domain/operatore';
 })
 export class MultiSelect {
 
-    esitoOperatori: Operatore[];
+    esitoOperatori=[];
     operatore:Operatore;
-    operatoriService:OperatoriService;
+   
     elem:SelectItem;
     operatori: SelectItem[];
     strutture: SelectItem[];
@@ -44,30 +45,41 @@ export class MultiSelect {
     item: string;
  
     
-    constructor() {
+ /*   constructor() {
 
+        
         this.operatoriService.getAllOperatori().then(esitoOperatori => this.esitoOperatori = esitoOperatori);
  
          for (let i = 0; i < this.esitoOperatori.length; i++) {
             this.elem.label=this.esitoOperatori[i].nome;
             this.elem.value=this.esitoOperatori[i].id;;
             this.operatori.push(this.elem);
-        }
+        }*/
 
-      /*  this.operatori.push() = [
-            { label: 'Audi', value: 'Audi' },
-            { label: 'BMW', value: 'BMW' },
-            { label: 'Fiat', value: 'Fiat' },
-            { label: 'Ford', value: 'Ford' },
-            { label: 'Honda', value: 'Honda' },
-            { label: 'Jaguar', value: 'Jaguar' },
-            { label: 'Mercedes', value: 'Mercedes' },
-            { label: 'Renault', value: 'Renault' },
-            { label: 'VW', value: 'VW' },
-            { label: 'Volvo', value: 'Volvo' },
-        ];*/
+    constructor(private  operatoriService:OperatoriService) { }
 
-        this.items = [];
-       
+    ngOnInit() {
+
+        this.operatori=[];
+        this.operatoriService.getAllOperatori().subscribe((data: any[])=>{
+             this.esitoOperatori = data;
+            console.log(this.esitoOperatori);
+            //la stampa funziona e il risultato c'è
+
+            for(let operatore of this.esitoOperatori){
+                this.elem={value:'',label:''};
+
+                console.log(operatore.nome); //use i instead of 0
+                this.elem.label=operatore.nome;
+                this.elem.value=operatore.id;;
+                this.operatori.push(this.elem);
+              }
+          }) 
+
+          console.log('daje')
+
+          //non stampa nulla nel for
+      
+    
     }
 }

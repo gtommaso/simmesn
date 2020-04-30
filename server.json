@@ -1,0 +1,18 @@
+{
+  "operatori": [
+    { "id": 1, "nome": "Claudia", "cognome" : "Carducci", "email" : "claudia.carducci@uniroma1.it" , "telefono" : "0649975812" , "ruolo" : "Dirigente chimico" },
+    { "id": 2, "nome": "Teresa", "cognome" : "Giovanniello", "email" : "t.giovanniello@policlinicoumberto1.it" , "telefono" : "0649975817" , "ruolo" : "Dirigente medicos" },
+    { "id": 3, "nome": "Carla", "cognome" : "Carducci", "email" : "carla.carducci@uniroma1.it" , "telefono" : "0649975807" , "ruolo" : "Dirigente biologico" }
+
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
